@@ -1,3 +1,7 @@
+
+let data = []; 
+
+
 na=document.createElement('input')
 na.type='text';
 na.placeholder="Name";
@@ -18,6 +22,17 @@ a.textContent='Add'
 document.body.appendChild(a);
 
 a.addEventListener('click',function(){
+
+
+    let userData = {
+        name: na.value,
+        email: em.value,
+        phone: ph.value
+    };
+    
+    data.push(userData); 
+    console.log(data);
+    
     let container = document.createElement('div'); 
     container.style.marginTop = '10px';
 
