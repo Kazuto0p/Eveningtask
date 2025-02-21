@@ -18,13 +18,13 @@ function user(){
 }
 
 function displayContacts() {
-    // Clear the existing list
+  
     contactList.innerHTML = '';
 
-    // Retrieve contacts from localStorage
+  
     let contacts = JSON.parse(localStorage.getItem('contactData')) || [];
 
-    // Display each contact with a delete button and an update button
+
     contacts.forEach((contact, index) => {
         const contactDiv = document.createElement('div');
         contactDiv.classList.add('contactItem');
@@ -40,16 +40,16 @@ function displayContacts() {
 
 
 function deleteContact(index) {
-    // Retrieve contacts from localStorage
+ 
     let contacts = JSON.parse(localStorage.getItem('contactData')) || [];
 
-    // Remove the contact at the given index
+   
     contacts.splice(index, 1);
 
-    // Update the localStorage with the modified list
+   
     localStorage.setItem('contactData', JSON.stringify(contacts));
 
-    // Refresh the contact list display
+ 
     displayContacts();
 }
 
