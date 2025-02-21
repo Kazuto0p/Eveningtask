@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Contact</title>
+</head>
+<body>
+    <h2>Update Contact</h2>
+    <form id="updateForm">
+        <label for="fn">First Name:</label>
+        <input type="text" id="fn" placeholder="Enter First Name" required><br><br>
+        <label for="ls">Last Name:</label>
+        <input type="text" id="ls" placeholder="Enter Last Name" required><br><br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" placeholder="Enter Mobile No" required><br><br>
+        <button type="submit">Update</button>
+    </form>
+    <button onclick="window.location.href = 'index.html';">Back to Home</button>
+
+    <script>
+        // Get the index from the URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const index = urlParams.get('index');
+
+        // Function to load the contact data for the given index
+        function loadContact() {
+            let contacts = JSON.parse(localStorage.getItem('contactData')) || [];
+            if (contacts[index]) {
+                document.getElementById('fn').value = contacts[index].fname;
+                document.getElementById('ls').value = contacts[index].lname;
+                document.getElementById('mobile').value = contacts[index].mb;
+            }
+        }
+
+        // Function to update the contact data
+        document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let contacts = JSON.parse(localStorage.getItem('contactData')) || [];
+            contacts[index].fname = document.getElementById('fn').value;
+            contacts[index].lname = document.getElementById('ls').value;
+            contacts[index].mb = document.getElementById('mobile').value;
+
+            localStorage.setItem('contactData', JSON.stringify(contacts));
+
+            // After updating, redirect back to the home page
+            window.location.href = 'task3.html';
+        });
+
+        // Load the contact when the page loads
+        loadContact();
+    </script>
+</body>
+</html>
