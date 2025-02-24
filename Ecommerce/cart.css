@@ -1,0 +1,78 @@
+#cart-container {
+    max-width: 800px;
+    background: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    display: flex;             /* Use flexbox to center elements */
+    flex-direction: column;    /* Align elements vertically (default is row, column stacks vertically) */
+    justify-content: center;   /* Center content horizontally */
+    align-items: center;       /* Center content vertically */
+    text-align: center;
+    gap: 5px;
+}
+
+#total-price {
+    font-size: 24px;
+    font-family: cursive;
+    font-weight: bold;
+    color: #222;
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1{
+    font-family: cursive;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+
+  /* Styling for buttons */
+.cart-button {
+    background-color: #34373a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cart-button:hover {
+    background-color: #495057;
+  }
+  
+.wrap{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+  #new{
+    text-align: center;
+    align-items: center;
+    background-color: #34373a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3sease;
+  }
